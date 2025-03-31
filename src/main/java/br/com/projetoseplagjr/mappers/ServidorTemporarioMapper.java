@@ -17,5 +17,6 @@ public interface ServidorTemporarioMapper {
     ServidorTemporario toEntity(ServidorTemporarioDTO servidorTemporarioDTO);
 
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "pessoa.id", source = "pessoaId")
     void updateEntityFromDTO(ServidorTemporarioDTO servidorTemporarioDTO, @MappingTarget ServidorTemporario servidorTemporario);
 }

@@ -14,6 +14,7 @@ public interface EnderecoMapper {
     EnderecoMapper INSTANCE = Mappers.getMapper(EnderecoMapper.class);
 
     @Mapping(target = "cidade.id", source = "cidadeId")
+    @Mapping(target = "id", ignore = true)
     Endereco toEntity(EnderecoRequestDTO request);
 
     @Mapping(source = "cidade.nome", target = "cidadeNome")

@@ -16,8 +16,9 @@ public interface LotacaoMapper {
     LotacaoResponseDTO toResponseDTO(Lotacao lotacao);
 
 
-    @Mapping(target = "pessoa", ignore = true)
-    @Mapping(target = "unidade", ignore = true)
+    @Mapping(target = "pessoa.id", source = "pessoaId")
+    @Mapping(target = "unidade.id",source = "unidadeId")
+    @Mapping(target = "id", ignore = true)
     Lotacao toEntity(LotacaoDTO lotacaoDTO);
 
     @Mapping(target = "id", ignore = true)
