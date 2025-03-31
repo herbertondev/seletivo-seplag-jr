@@ -107,4 +107,4 @@ Para facilitar o uso da aplicação, a imagem do projeto também está disponív
 ### 🛠 Puxar a Imagem
 
 ```sh
-docker pull herbertonlauro/seletivoseplagmt
+docker pull herbertondev/projeto-seplag-jr
