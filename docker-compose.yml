@@ -10,9 +10,9 @@ services:
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: seletivoseplagmt
     ports:
-      - "5433:5432"
-#    volumes: # apagar se for usar o portainer
-#      - /projetos/docker/volumes/postgresql:/var/lib/postgresql/data # apagar se for usar o portainer
+      - "5432:5432"
+#    volumes:
+#      - /projetos/docker/volumes/postgresql:/var/lib/postgresql/data
   minio:
     image: minio/minio
     container_name: minio_server
