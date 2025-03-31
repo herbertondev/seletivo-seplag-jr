@@ -41,4 +41,9 @@ public class LotacaoController {
         return lotacaoService.atualizar(id, lotacaoDTO);
     }
 
+//    @DELETE
+//    @Path("/{id}")
+//    public void excluir(@PathParam("id") Long id) {
+//        lotacaoService.excluir(id);
+//    }
 }

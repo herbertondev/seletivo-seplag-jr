@@ -11,13 +11,17 @@ import org.mapstruct.MappingTarget;
 @Mapper(componentModel = MappingConstants.ComponentModel.JAKARTA_CDI)
 public interface LotacaoMapper {
 
-
     @Mapping(target = "unidadeId", source = "unidade.id")
+    @Mapping(target = "pessoaId", source = "pessoa.id")
     LotacaoResponseDTO toResponseDTO(Lotacao lotacao);
 
 
+    @Mapping(target = "pessoa", ignore = true)
+    @Mapping(target = "unidade", ignore = true)
     Lotacao toEntity(LotacaoDTO lotacaoDTO);
 
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "pessoa", ignore = true) // Impede atualização automática de pessoa
+    @Mapping(target = "unidade", ignore = true) // Impede atualização automática de unidade
     void updateEntityFromDTO(LotacaoDTO lotacaoDTO, @MappingTarget Lotacao lotacao);
 }

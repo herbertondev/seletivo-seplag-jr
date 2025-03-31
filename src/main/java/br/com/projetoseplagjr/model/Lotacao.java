@@ -24,10 +24,10 @@ public class Lotacao {
     private Pessoa pessoa;
 
     @ManyToOne
-    @JoinColumn(name = "unid_id", nullable = false)
+    @JoinColumn(name = "uni_id", nullable = false) // Alinhado com o erro "uni_id"
     private Unidade unidade;
 
-    @Column(name = "lot_data_latacao")
+    @Column(name = "lot_data_lotacao")
     private LocalDate dataLotacao;
 
     @Column(name = "lot_data_remocao")
