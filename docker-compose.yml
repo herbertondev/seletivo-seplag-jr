@@ -1,31 +1,55 @@
 version: '3.8'
 
 services:
+  app:
+    build:
+      context: .
+      dockerfile: src/main/docker/Dockerfile.jvm
+    container_name: seplagjr-api
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=seletivoseplagmt
+      - DB_USERNAME=admin
+      - DB_PASSWORD=admin
+      - MINIO_URL=http://minio:9000
+      - MINIO_ACCESS_KEY=admin
+      - MINIO_SECRET_KEY=admin123
+    depends_on:
+      - postgres
+      - minio
+    networks:
+      - seplagjr-network
+
   postgres:
-    image: postgres:latest
+    image: postgres:15
     container_name: seletivoseplag
     restart: always
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
-      POSTGRES_DB: seletivoseplagmt
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=seletivoseplagmt
     ports:
-      - "5432:5432"
-#    volumes:
-#      - /projetos/docker/volumes/postgresql:/var/lib/postgresql/data
+      - "5433:5432"
+    networks:
+      - seplagjr-network
+
   minio:
     image: minio/minio
     container_name: minio_server
     restart: always
     environment:
-      MINIO_ROOT_USER: admin
-      MINIO_ROOT_PASSWORD: admin123
+      - MINIO_ROOT_USER=admin
+      - MINIO_ROOT_PASSWORD=admin123
     ports:
-     - "9000:9000"
-     - "9001:9001"
+      - "9000:9000"
+      - "9001:9001"
     command: server --console-address ":9001" /data
-#    volumes:
-#     - /projetos/docker/volumes/minio:/data
+    networks:
+      - seplagjr-network
 
-
-
+networks:
+  seplagjr-network:
+    driver: bridge

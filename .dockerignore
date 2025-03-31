@@ -1,5 +1,53 @@
+# Ignorar tudo por padrão
 *
+
+# Permitir apenas os artefatos do build necessários para a execução
+!pom.xml
+!Dockerfile
 !target/*-runner
 !target/*-runner.jar
 !target/lib/*
 !target/quarkus-app/*
+
+# Ignorar o código-fonte para não ser copiado no build
+src/
+
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+.flattened-pom.xml
+target/
+
+# IDEs
+.project
+.classpath
+.settings/
+bin/
+.idea
+*.ipr
+*.iml
+*.iws
+nb-configuration.xml
+.vscode
+
+# Arquivos do sistema
+.DS_Store
+
+# Arquivos temporários
+*.swp
+*.swo
+
+# Patches
+*.orig
+*.rej
+
+# Plugins Quarkus
+/.quarkus/cli/plugins/
+
+# Certificados TLS
+.certs/
+
+# Ambiente local
+.env
