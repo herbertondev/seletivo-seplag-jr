@@ -2,6 +2,9 @@ version: '3.8'
 
 services:
   app:
+#    build:
+#      context: .
+#      dockerfile: src/main/docker/Dockerfile.jvm
     image: herbertondev/projeto-seplag-jr:latest  # Imagem no DockerHub
     container_name: seplagjr-api
     ports:
@@ -16,10 +19,10 @@ services:
       - MINIO_ACCESS_KEY=admin
       - MINIO_SECRET_KEY=admin123
     depends_on:
-      - postgres  # A aplicação depende do postgres estar rodando
-      - minio  # E também depende do MinIO estar rodando
+      - postgres
+      - minio
     networks:
-      - seplagjr-network  # Rede personalizada para comunicação entre os containers
+      - seplagjr-network
 
   postgres:
     image: postgres:15
@@ -35,7 +38,7 @@ services:
       - seplagjr-network
 
   minio:
-    image: minio/minio  # Usando a imagem oficial do MinIO
+    image: minio/minio
     container_name: minio_server
     restart: always
     environment:
@@ -44,7 +47,7 @@ services:
     ports:
       - "9000:9000"
       - "9001:9001"
-    command: server --console-address ":9001" /data  # Comando para rodar o MinIO com o console
+    command: server --console-address ":9001" /data
     networks:
       - seplagjr-network
 
