@@ -1,45 +1,53 @@
-#Maven
-target/
+# Ignorar tudo por padrão
+*
+
+# Permitir apenas os artefatos do build necessários para a execução
+!pom.xml
+!Dockerfile
+!target/*-runner
+!target/*-runner.jar
+!target/lib/*
+!target/quarkus-app/*
+
+# Ignorar o código-fonte para não ser copiado no build
+src/
+
+# Maven
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
 release.properties
 .flattened-pom.xml
+target/
 
-# Eclipse
+# IDEs
 .project
 .classpath
 .settings/
 bin/
-
-# IntelliJ
 .idea
 *.ipr
 *.iml
 *.iws
-
-# NetBeans
 nb-configuration.xml
-
-# Visual Studio Code
 .vscode
-.factorypath
 
-# OSX
+# Arquivos do sistema
 .DS_Store
 
-# Vim
+# Arquivos temporários
 *.swp
 *.swo
 
-# patch
+# Patches
 *.orig
 *.rej
 
-# Local environment
-.env
-
-# Plugin directory
+# Plugins Quarkus
 /.quarkus/cli/plugins/
-# TLS Certificates
+
+# Certificados TLS
 .certs/
+
+# Ambiente local
+.env
