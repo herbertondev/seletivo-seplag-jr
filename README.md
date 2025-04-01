@@ -98,3 +98,13 @@ docker-compose up
   docker-compose logs <nome_do_serviço>
   ```
   Exemplo: `docker-compose logs quarkus`, `docker-compose logs minio`, `docker-compose logs postgres`.
+
+
+## 📦 DockerHub
+
+Para facilitar o uso da aplicação, a imagem do projeto também está disponível no DockerHub. Você pode baixar a imagem e rodar a aplicação sem precisar configurar o ambiente localmente.
+
+### 🛠 Puxar a Imagem
+
+```sh
+docker pull herbertondev/projeto-seplag-jr
