@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import br.com.projetoseplagjr.model.UserRole;
+
 @Entity
 @Table(name = "users")
 @Getter
@@ -19,4 +21,11 @@ public class User {
 
     @Column(nullable = false)
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private UserRole role;
+
+    @Column(nullable = false)
+    private boolean active = true;
 }

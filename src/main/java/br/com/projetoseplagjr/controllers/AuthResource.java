@@ -27,11 +27,12 @@ public class AuthResource {
     @Transactional
     public Response login(LoginDTO credentials) {
         User user = userRepository.findByUsername(credentials.getUsername());
-        if (user == null || !user.getPassword().equals(credentials.getPassword())) {
+        if (user == null || !user.isActive() || !user.getPassword().equals(credentials.getPassword())) {
             return Response.status(Response.Status.UNAUTHORIZED).build();
         }
         String token = Jwt.claims()
                 .subject(credentials.getUsername())
+                .groups(user.getRole().name())
                 .expiresIn(Duration.ofMinutes(5))
                 .sign();
         return Response.ok(new TokenDTO(token)).build();
