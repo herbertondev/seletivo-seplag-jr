@@ -4,6 +4,7 @@ import br.com.projetoseplagjr.controllers.AuthResource;
 import br.com.projetoseplagjr.dto.LoginDTO;
 import br.com.projetoseplagjr.repository.UserRepository;
 import br.com.projetoseplagjr.model.User;
+import br.com.projetoseplagjr.model.UserRole;
 import io.quarkus.test.junit.QuarkusTest;
 import io.quarkus.test.junit.TestHTTPEndpoint;
 import io.restassured.http.ContentType;
@@ -29,6 +30,7 @@ public class AuthResourceTest {
         User user = new User();
         user.setUsername("test");
         user.setPassword("secret");
+        user.setRole(UserRole.ADMIN);
         userRepository.persist(user);
     }
 
