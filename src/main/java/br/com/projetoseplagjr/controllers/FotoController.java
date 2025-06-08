@@ -9,9 +9,11 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.jboss.resteasy.reactive.RestForm;
 import org.jboss.resteasy.reactive.multipart.FileUpload;
+import io.quarkus.security.Authenticated;
 
 @Path("/fotos")
 @Produces(MediaType.APPLICATION_JSON)
+@Authenticated
 public class FotoController {
 
     @Inject
