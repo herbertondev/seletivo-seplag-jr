@@ -7,6 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class FotoPessoaDTO {
+
     private Long pessoaId;
     @Column(name = "fp_bucket", length = 50)
     private String bucket;
