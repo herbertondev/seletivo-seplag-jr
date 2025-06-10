@@ -23,4 +23,7 @@ public class LotacaoResponseDTO {
     private String portaria;
     @Schema(example = "1")
     private Long unidadeId;
+    @Schema(example = "1")
+    private Long pessoaId;
+
 }
