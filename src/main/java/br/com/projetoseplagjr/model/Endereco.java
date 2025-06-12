@@ -14,7 +14,7 @@ public class Endereco {
     @Column(name = "end_id")
     private Long id;
 
-    @Column(name = "end_tipo_logradouro", length = 50)
+    @Column(name = "end_tipo_logradouro", length = 200)
     private String tipoLogradouro;
 
     @Column(name = "end_logradouro", length = 200)

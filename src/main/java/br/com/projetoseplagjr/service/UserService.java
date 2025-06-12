@@ -53,6 +53,6 @@ public class UserService {
     public void desativar(Long id) {
         User user = userRepository.findByIdOptional(id)
                 .orElseThrow(() -> new NotFoundException("Usuário não encontrado"));
-        user.setActive(false);
+        user.setAtivo(false);
     }
 }

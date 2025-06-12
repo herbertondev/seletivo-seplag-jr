@@ -14,10 +14,10 @@ public interface UserMapper {
     UserResponseDTO toResponseDTO(User user);
 
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "active", ignore = true)
+    @Mapping(target = "ativo", ignore = true)
     User toEntity(UserRequestDTO dto);
 
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "active", ignore = true)
+    @Mapping(target = "ativo", ignore = true)
     void updateFromDto(UserRequestDTO dto, @MappingTarget User user);
 }
