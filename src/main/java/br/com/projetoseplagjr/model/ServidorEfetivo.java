@@ -17,7 +17,7 @@ public class ServidorEfetivo {
     @JoinColumn(name = "pes_id", nullable = false, unique = true) // Garante unicidade de pes_id
     private Pessoa pessoa;
 
-    @Column(name = "se_matricula", length = 20, nullable = false, unique = true) // Matrícula única
+    @Column(name = "se_matricula", length = 200, nullable = false, unique = true) // Matrícula única
     private String matricula;
 
     // Construtor para criação com matrícula

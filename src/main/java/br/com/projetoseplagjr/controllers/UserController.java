@@ -22,7 +22,7 @@ public class UserController {
     UserService userService;
 
     @GET
-    @RolesAllowed("ADMIN")
+    @RolesAllowed({"USER","ADMIN"})
     public List<UserResponseDTO> listar() {
         return userService.listarTodos();
     }

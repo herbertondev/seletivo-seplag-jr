@@ -23,9 +23,9 @@ public class FotoPessoa {
     @Column(name = "fp_data")
     private LocalDate data;
 
-    @Column(name = "fp_bucket", length = 50)
+    @Column(name = "fp_bucket", length = 200)
     private String bucket;
 
-    @Column(name = "fp_hash", length = 64) // Ajustado para SHA-256
+    @Column(name = "fp_hash", length = 200) // Ajustado para SHA-256
     private String hash;
 }

@@ -9,9 +9,9 @@ import lombok.Setter;
 public class FotoPessoaDTO {
 
     private Long pessoaId;
-    @Column(name = "fp_bucket", length = 50)
+    @Column(name = "fp_bucket", length = 200)
     private String bucket;
 
-    @Column(name = "fp_hash", length = 50)
+    @Column(name = "fp_hash", length = 200)
     private String hash;
 }
