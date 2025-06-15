@@ -1,33 +1,5 @@
-# Pastas de build e dependências
-target/
-build/
-out/
-
-# Arquivos de ambiente
-.env
-*.pem
-*.key
-*.crt
-
-# Logs e temporários
-*.log
-*.tmp
-*.swp
-*~
-
-# IDEs
-.idea/
-*.iml
-.vscode/
-
-# Sistema operacional
-.DS_Store
-Thumbs.db
-
-# Docker
-*.pid
-
+*
 !target/*-runner
 !target/*-runner.jar
-!target/lib/**
-!target/quarkus-app/**
+!target/lib/*
+!target/quarkus-app/*
